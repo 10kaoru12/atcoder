@@ -8,14 +8,15 @@ using ll = long long;
 
 int main(void)
 {
-    int a, b, n;
-    cin >> a >> b >> n;
-    for (int i = n;; i++)
+    int n, k, x, y;
+    cin >> n >> k >> x >> y;
+    if (n <= k)
     {
-        if (i % a == 0 && i % b == 0)
-        {
-            cout << i << endl;
-            return 0;
-        }
+        cout << n * x << endl;
     }
+    else
+    {
+        cout << k * x + (n - k) * y << endl;
+    }
+    return 0;
 }

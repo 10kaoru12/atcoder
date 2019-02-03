@@ -8,14 +8,16 @@ using ll = long long;
 
 int main(void)
 {
-    int a, b, n;
-    cin >> a >> b >> n;
-    for (int i = n;; i++)
+    string s;
+    cin >> s;
+    for (int i = 0; i < 4; i++)
     {
-        if (i % a == 0 && i % b == 0)
+        if (s[0] != s[i])
         {
-            cout << i << endl;
+            cout << "DIFFERENT" << endl;
             return 0;
         }
     }
+    cout << "SAME" << endl;
+    return 0;
 }

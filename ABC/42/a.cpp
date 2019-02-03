@@ -8,14 +8,15 @@ using ll = long long;
 
 int main(void)
 {
-    int a, b, n;
-    cin >> a >> b >> n;
-    for (int i = n;; i++)
+    int a, b, c;
+    cin >> a >> b >> c;
+    if (a + b + c == 17)
     {
-        if (i % a == 0 && i % b == 0)
-        {
-            cout << i << endl;
-            return 0;
-        }
+        cout << "YES" << endl;
     }
+    else
+    {
+        cout << "NO" << endl;
+    }
+    return 0;
 }

@@ -8,14 +8,16 @@ using ll = long long;
 
 int main(void)
 {
-    int a, b, n;
-    cin >> a >> b >> n;
-    for (int i = n;; i++)
+    string s;
+    cin >> s;
+    auto size = s.length();
+    if (s[size - 1] == 'T')
     {
-        if (i % a == 0 && i % b == 0)
-        {
-            cout << i << endl;
-            return 0;
-        }
+        cout << "YES" << endl;
     }
+    else
+    {
+        cout << "NO" << endl;
+    }
+    return 0;
 }
