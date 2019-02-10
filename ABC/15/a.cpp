@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 
-#define rep(i, n) for (int i = 0; i < (int)(n); i++)
+#define rep(i, n) for (int i = 0; i < (int)(n); i++)
 #define all(x) (x).begin(), (x).end()
 
 using namespace std;

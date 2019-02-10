@@ -15,4 +15,16 @@ int gcd(int a, int b) {
 
 int lcm(int a, int b) { return a * b / gcd(a, b); }
 
-int main(void) {}
+int main(void) {
+  vector<int> s(3);
+  for (int i = 0; i < 3; i++) {
+    cin >> s[i];
+  }
+  sort(all(s));
+  if (s[2] == (s[1] + s[0])) {
+    cout << "Yes" << endl;
+  } else {
+    cout << "No" << endl;
+  }
+  return 0;
+}
