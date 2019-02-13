@@ -1,8 +1,22 @@
 {
+    //files
+    "files.autoSave": "afterDelay",
+    "files.autoGuessEncoding": true,
+
     // editor
+    "editor.fontSize": 14,
+    "editor.lineNumbers": "on",
+    "editor.renderWhitespace": "boundary",
+    "editor.cursorBlinking": "smooth",
+    "editor.smoothScrolling": true,
+    "editor.autoIndent": true,
     "editor.formatOnType": true,
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
+    "editor.cursorSmoothCaretAnimation": true,
+
+    //breadcrumbs
+    "breadcrumbs.enabled": true,
 
     //git
     "git.autofetch": true,
@@ -12,7 +26,9 @@
     "git.showPushSuccessNotification": true,
 
     //workbench
-    "workbench.colorTheme": "Quiet Light",
+    "workbench.colorTheme": "Visual Studio Light",
+    "workbench.iconTheme": "vs-minimal",
+    "workbench.editor.swipeToNavigate": true,
 
     //C_Cpp
     "C_Cpp.clang_format_sortIncludes": true,
@@ -26,7 +42,7 @@
         "javascript": "node",
         "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
         "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-        "cpp": "cd $dir && g++ -O2 -std=c++14 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "cpp": "cd $dir && c++ -O2 -std=c++17 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
         "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
         "php": "php",
         "python": "python -u",
@@ -62,9 +78,5 @@
         "d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
         "haskell": "runhaskell",
         "nim": "nim compile --verbosity:0 --hints:off --run"
-    },
-    "files.autoSave": "afterDelay",
-    "files.associations": {
-        "numeric": "cpp"
     }
 }
