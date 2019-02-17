@@ -1,0 +1,16 @@
+{
+    "configurations": [{
+        "name": "Mac",
+        "includePath": [
+            "${workspaceFolder}/**",
+            "/usr/local/Cellar/boost/1.68.0_1/include",
+            "/usr/local/Cellar/boost/1.68.0_1/lib"
+        ],
+        "defines": [],
+        "macFrameworkPath": [
+            "/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/System/Library/Frameworks"
+        ],
+        "cStandard": "c11"
+    }],
+    "version": 4
+}
