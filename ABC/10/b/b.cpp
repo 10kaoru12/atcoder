@@ -16,32 +16,31 @@ int lcm(int a, int b) { return a * b / gcd(a, b); }
 int main(void)
 {
     int n;
-    int max = 0;
     int cnt = 0;
+    int tmp;
     cin >> n;
-    vector<string> s(n);
+    vector<int> str(n);
+    vector<int> sub(n);
     rep(i, n)
     {
-        cin >> s[i];
-    }
-    string ans = s[0];
-    sort(all(s));
-    for (int i = 1; i < n; i++)
-    {
-        if (s[i] == s[i - 1])
+        cin >> tmp;
+        tmp = tmp % 6;
+        switch (tmp)
         {
-            ++cnt;
-            if (max < cnt)
-            {
-                max = cnt;
-                ans = s[i];
-            }
-        }
-        else
-        {
-            cnt = 0;
+        case 2:
+        case 4:
+            cnt++;
+            break;
+        case 5:
+            cnt += 2;
+            break;
+        case 0:
+            cnt += 3;
+            break;
+        default:
+            break;
         }
     }
-    cout << ans << endl;
+    cout << cnt << endl;
     return 0;
 }
