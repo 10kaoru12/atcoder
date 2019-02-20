@@ -2,6 +2,11 @@
     //files
     "files.autoSave": "afterDelay",
     "files.autoGuessEncoding": true,
+    "files.associations": {
+        "ostream": "cpp",
+        "iostream": "cpp",
+        "chrono": "cpp"
+    },
 
     // editor
     "editor.fontSize": 14,
@@ -35,6 +40,7 @@
     "C_Cpp.default.compilerPath": "/usr/local/Cellar/gcc/8.2.0/bin/g++-8",
     "C_Cpp.default.cppStandard": "c++14",
     "C_Cpp.default.intelliSenseMode": "gcc-x64",
+    "C_Cpp.errorSquiggles": "Disabled",
 
     //code-runner
     "code-runner.saveAllFilesBeforeRun": true,
@@ -78,11 +84,5 @@
         "d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
         "haskell": "runhaskell",
         "nim": "nim compile --verbosity:0 --hints:off --run"
-    },
-    "files.associations": {
-        "ostream": "cpp",
-        "iostream": "cpp",
-        "chrono": "cpp"
-    },
-    "C_Cpp.errorSquiggles": "Disabled"
+    }
 }

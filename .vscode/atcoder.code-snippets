@@ -1,5 +1,5 @@
 {
-	"template": {
+	"template code": {
 		"scope": "cpp",
 		"prefix": "tmp",
 		"body": [
@@ -28,9 +28,9 @@
 		],
 		"description": "Competition programming template"
 	},
-	"measure": {
+	"measure code": {
 		"scope": "cpp",
-		"prefix": "test",
+		"prefix": "tst",
 		"body": [
 			"auto start = system_clock::now();",
 			"${1}",
