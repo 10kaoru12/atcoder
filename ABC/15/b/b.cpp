@@ -1,9 +1,10 @@
+/* include */
 #include <bits/stdc++.h>
 
-//using
+/* using */
 using namespace std;
 
-//struct
+/* main constructor */
 struct Fast
 {
     Fast()
@@ -13,7 +14,7 @@ struct Fast
     }
 } fast;
 
-//define
+/* define */
 #define REP(i, x, n) for (int i = x; i < (int)(n); ++i)
 #define RREP(i, x, n) for (int i = x - 1; i >= (int)(n); --i)
 #define rep(i, n) REP(i, 0, n)
@@ -25,26 +26,32 @@ struct Fast
 #define eunique(x) (x).erase(unique(all(x), (x).end()))
 #define int long long
 #define MAX 1e9 + 7
+#define Int1(x)  \
+    long long x; \
+    scanf("%lld", &x);
+#define Int2(x)        \
+    long long(x), (y); \
+    scanf("%lld %lld", &x, &y);
 
-//func
+/* func */
 int gcd(int a, int b) { return b ? gcd(b, a % b) : a; }
 int lcm(int a, int b) { return a * b / gcd(a, b); }
 
+/* main */
 signed main(void)
 {
-    auto start = chrono::system_clock::now();
-    int a = 8, b = 1;
-    //cin >> a >> b;
-    if (abs(a - b) > 5)
+    double sum = 0;
+    double cnt = 0;
+    Int1(n);
+    rep(i, n)
     {
-        cout << (9 - abs(a - b)) + 1 << endl;
+        Int1(a);
+        sum += a;
+        if (a)
+        {
+            cnt++;
+        }
     }
-    else
-    {
-        cout << abs(a - b) << endl;
-    }
-    auto end = chrono::system_clock::now();
-    auto sec = chrono::duration_cast<chrono::microseconds>(end - start).count();
-    cout << sec << endl;
+    cout << ceil(sum / cnt) << endl;
     return 0;
 }

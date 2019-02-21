@@ -1,9 +1,10 @@
+/* include */
 #include <bits/stdc++.h>
 
-//using
+/* using */
 using namespace std;
 
-//struct
+/* main constructor */
 struct Fast
 {
     Fast()
@@ -13,7 +14,7 @@ struct Fast
     }
 } fast;
 
-//define
+/* define */
 #define REP(i, x, n) for (int i = x; i < (int)(n); ++i)
 #define RREP(i, x, n) for (int i = x - 1; i >= (int)(n); --i)
 #define rep(i, n) REP(i, 0, n)
@@ -26,23 +27,51 @@ struct Fast
 #define int long long
 #define MAX 1e9 + 7
 
-//func
+/* func */
 int gcd(int a, int b) { return b ? gcd(b, a % b) : a; }
 int lcm(int a, int b) { return a * b / gcd(a, b); }
 
+/* main */
 signed main(void)
 {
+    // auto start = chrono::system_clock::now();
+    // int n;
+    // int x;
+    // cin >> n >> x;
+    // int cnt = 0;
+    // vector<int> v(n);
+    // rep(i, n)
+    // {
+    //     cin >> v[i];
+    // }
+    // const int size = CHAR_BIT * sizeof(x);
+    // bitset<size> bs(x);
+    // rep(i, size)
+    // {
+    //     if (bs[i])
+    //     {
+    //         cnt += v[i];
+    //     }
+    // }
+    // cout << cnt << endl;
+    // auto end = chrono::system_clock::now();
+    // auto sec = chrono::duration_cast<chrono::microseconds>(end - start).count();
+    // cout << sec << endl;
     auto start = chrono::system_clock::now();
-    int a = 8, b = 1;
-    //cin >> a >> b;
-    if (abs(a - b) > 5)
+    int n, x;
+    int cnt = 0;
+    cin >> n >> x;
+    rep(i, n)
     {
-        cout << (9 - abs(a - b)) + 1 << endl;
+        int in;
+        cin >> in;
+        if (x % 2)
+        {
+            cnt += in;
+        }
+        x >>= 1;
     }
-    else
-    {
-        cout << abs(a - b) << endl;
-    }
+    cout << cnt << endl;
     auto end = chrono::system_clock::now();
     auto sec = chrono::duration_cast<chrono::microseconds>(end - start).count();
     cout << sec << endl;
