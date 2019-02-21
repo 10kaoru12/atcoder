@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+
+//using
+using namespace std;
+using namespace chrono;
+
+//struct
+struct Fast
+{
+    Fast()
+    {
+        std::cin.tie(0);
+        ios::sync_with_stdio(false);
+    }
+} fast;
+
+//define
+#define REP(i, x, n) for (int i = x; i < (int)(n); ++i)
+#define RREP(i, x, n) for (int i = x - 1; i >= (int)(n); --i)
+#define rep(i, n) REP(i, 0, n)
+#define reps(i, n) REP(i, 1, n + 1)
+#define rrep(i, n) RREP(i, n, 0)
+#define each(i, n) for (auto &i : n)
+#define all(x) (x).begin(), (x).end()
+#define rall(x) (x).rbegin(), (x).rend()
+#define int long long
+#define MAX 1e9 + 7
+
+//func
+int gcd(int a, int b) { return b ? gcd(b, a % b) : a; }
+int lcm(int a, int b) { return a * b / gcd(a, b); }
+int uniquesize(v) { return set<int>(all(v)).size; }
+
+signed main(void)
+{
+    auto start = system_clock::now();
+    int a = 1, b = 3, c = 5;
+    cout << gcd(a, gcd(b, c)) << endl;
+    auto end = system_clock::now();
+    auto sec = duration_cast<microseconds>(end - start).count();
+    cout << sec << endl;
+    return 0;
+}
