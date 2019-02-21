@@ -28,7 +28,7 @@
 			"#define each(i, n) for (auto &i : n)",
 			"#define all(x) (x).begin(), (x).end()",
 			"#define rall(x) (x).rbegin(), (x).rend()",
-			"#define eunique(x) (x).erase(unique(all(x), (x).end()))",
+			"#define eunique(x) (x).erase(unique(all(x)), (x).end())",
 			"#define int long long",
 			"#define MAX 1e9 + 7",
 			"",
