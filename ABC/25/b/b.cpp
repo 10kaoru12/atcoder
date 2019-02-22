@@ -34,42 +34,5 @@ int lcm(int a, int b) { return a * b / gcd(a, b); }
 /* main */
 signed main(void)
 {
-    int n;
-    cin >> n;
-    string s;
-    string a;
-    cin >> s;
-    a += 'b';
-    if (a == s)
-    {
-        cout << 0 << endl;
-        return 0;
-    }
-    if ((n / 2) % 2 == 0)
-    {
-        cout << "-1" << endl;
-        return 0;
-    }
-    for (int i = 1; i < n; i++)
-    {
-        if (s[(n / 2) + i] == 'c' && s[(n / 2) - i] == 'a')
-        {
-            break;
-        }
-        else if (s[(n / 2) + i] == 'a' && s[(n / 2) - i] == 'c')
-        {
-            break;
-        }
-        else if (s[(n / 2) + i] == 'b' && s[(n / 2) - i] == 'b')
-        {
-            break;
-        }
-        else
-        {
-            cout << "-1" << endl;
-            return 0;
-        }
-    }
-    cout << n / 2 << endl;
-    return 0;
+    
 }
