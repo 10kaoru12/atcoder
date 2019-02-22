@@ -34,5 +34,32 @@ int lcm(int a, int b) { return a * b / gcd(a, b); }
 /* main */
 signed main(void)
 {
-    
+    int n, a, b;
+    cin >> n >> a >> b;
+    string fs;
+    int fn;
+    int num = 0;
+    rep(i, n)
+    {
+        cin >> fs >> fn;
+        if (fn < a)
+        {
+            ((fs[0] == 'E') ? num += a : num += a * (-1));
+        }
+        else if (a <= fn && fn <= b)
+        {
+            ((fs[0] == 'E') ? num += fn : num += fn * (-1));
+        }
+        else
+        {
+            ((fs[0] == 'E') ? num += b : num += b * (-1));
+        }
+    }
+    if (num == 0)
+    {
+        cout << 0 << endl;
+        return 0;
+    }
+    cout << ((num < 0) ? "West" : "East") << " " << abs(num) << endl;
+    return 0;
 }
