@@ -10,7 +10,8 @@ struct Fast
     Fast()
     {
         std::cin.tie(0);
-        ios::sync_with_stdio(false);
+        ios::sync_with_stdio(0);
+        //cout << fixed << setprecision(12);
     }
 } fast;
 
@@ -38,8 +39,9 @@ signed main(void)
     double s;
     double l;
     cin >> a >> b;
-    s = (((a * 60) + b) * 0.5);
+    s = ((a * 60) + b) * 0.5;
     l = b * 6;
-    cout << abs(s - l) << endl;
+    double d = fmod(abs(s - l), 360);
+    cout << min(abs(360 - d), d) << endl;
     return 0;
 }

@@ -5,7 +5,8 @@
     "files.associations": {
         "ostream": "cpp",
         "iostream": "cpp",
-        "chrono": "cpp"
+        "chrono": "cpp",
+        "iomanip": "cpp"
     },
 
     // editor
