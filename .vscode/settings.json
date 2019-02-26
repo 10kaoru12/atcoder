@@ -6,7 +6,9 @@
         "ostream": "cpp",
         "iostream": "cpp",
         "chrono": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "queue": "cpp",
+        "stack": "cpp"
     },
 
     // editor

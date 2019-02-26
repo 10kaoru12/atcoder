@@ -25,6 +25,7 @@ struct Fast
 #define all(x) (x).begin(), (x).end()
 #define rall(x) (x).rbegin(), (x).rend()
 #define eunique(x) (x).erase(unique(all(x)), (x).end())
+#define int long long
 #define MAX 1e9 + 7
 
 /* function */
@@ -34,23 +35,32 @@ int lcm(int a, int b) { return a * b / gcd(a, b); }
 /* main */
 signed main(void)
 {
-    int n;
-    int sum = 0;
-    int mi = 0;
-    string ms;
-    cin >> n;
-    rep(i, n)
+    int a, b, c;
+    int cnt = 0;
+    cin >> a >> b >> c;
+    while (a != 0 || b != 0)
     {
-        string a;
-        int b;
-        cin >> a >> b;
-        sum += b;
-        if (mi < b)
+        if (c == 0)
         {
-            mi = b;
-            ms = a;
+            cnt += b;
+        }
+        if (b != 0)
+        {
+            c--;
+            b--;
+            cnt += 2;
+        }
+        else
+        {
+            c--;
+            a--;
+            cnt++;
         }
     }
-    cout << ((sum / 2 < mi) ? ms : "atcoder") << endl;
+    if (c == 1)
+    {
+        cnt++;
+    }
+    cout << cnt << endl;
     return 0;
 }
