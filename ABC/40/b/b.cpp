@@ -11,7 +11,7 @@ struct Fast
     {
         std::cin.tie(0);
         ios::sync_with_stdio(0);
-        //cout << fixed << setprecision(12);
+        cout << fixed << setprecision(12);
     }
 } fast;
 
@@ -36,7 +36,25 @@ int lcm(int a, int b) { return a * b / gcd(a, b); }
 signed main(void)
 {
     int n;
+    int min = MAX;
     cin >> n;
-    cout << sqrt(sqrt(n)) << endl;
+    rep(i, sqrt(n) + 1)
+    {
+        rep(j, sqrt(n) * 2)
+        {
+            if (i * j > n)
+            {
+                continue;
+            }
+            else
+            {
+                if (min > n - i * j)
+                {
+                    min = n - i * j;
+                }
+            }
+        }
+    }
+    cout << min << endl;
     return 0;
 }

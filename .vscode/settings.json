@@ -8,7 +8,8 @@
         "chrono": "cpp",
         "iomanip": "cpp",
         "queue": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "cmath": "cpp"
     },
 
     // editor

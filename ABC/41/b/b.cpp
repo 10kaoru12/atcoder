@@ -11,9 +11,31 @@ struct Fast
     {
         std::cin.tie(0);
         ios::sync_with_stdio(0);
-        //cout << fixed << setprecision(12);
+        cout << fixed << setprecision(12);
     }
 } fast;
+
+/* template */
+template <class T>
+bool chmax(T &a, const T &b)
+{
+    if (a < b)
+    {
+        a = b;
+        return 1;
+    }
+    return 0;
+}
+template <class T>
+bool chmin(T &a, const T &b)
+{
+    if (b < a)
+    {
+        a = b;
+        return 1;
+    }
+    return 0;
+}
 
 /* define */
 #define REP(i, x, n) for (int i = x; i < (int)(n); ++i)
@@ -26,17 +48,19 @@ struct Fast
 #define rall(x) (x).rbegin(), (x).rend()
 #define eunique(x) (x).erase(unique(all(x)), (x).end())
 #define int long long
-#define MAX 1e9 + 7
 
 /* function */
 int gcd(int a, int b) { return b ? gcd(b, a % b) : a; }
 int lcm(int a, int b) { return a * b / gcd(a, b); }
 
+/* const */
+const int inf = 1e9 + 7;
+
 /* main */
 signed main(void)
 {
-    int n;
-    cin >> n;
-    cout << sqrt(sqrt(n)) << endl;
+    int a, b, c;
+    cin >> a >> b >> c;
+    cout << (a % inf * b % inf * c % inf) << endl;
     return 0;
 }
