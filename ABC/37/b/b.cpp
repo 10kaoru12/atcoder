@@ -35,19 +35,20 @@ int lcm(int a, int b) { return a * b / gcd(a, b); }
 /* main */
 signed main(void)
 {
-    int n;
-    cin >> n;
-    char out[50][50];
-    rep(i, n)
+    int n, q;
+    cin >> n >> q;
+    int s[n] = {0};
+    rep(i, q)
     {
-        rep(j, n)
+        int l, r, t;
+        cin >> l >> r >> t;
+        for (int i = l - 1; i < r; i++)
         {
-            cin >> out[j][(n - 1) - i];
+            s[i] = t;
         }
     }
     rep(i, n)
     {
-        cout << out[i] << endl;
+        cout << s[i] << endl;
     }
-    return 0;
 }

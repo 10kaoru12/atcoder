@@ -35,19 +35,15 @@ int lcm(int a, int b) { return a * b / gcd(a, b); }
 /* main */
 signed main(void)
 {
-    int n;
-    cin >> n;
-    char out[50][50];
-    rep(i, n)
+    int a, b, c, d;
+    cin >> a >> b >> c >> d;
+    if (a == c || b == d || a == d || b == c)
     {
-        rep(j, n)
-        {
-            cin >> out[j][(n - 1) - i];
-        }
+        cout << "YES" << endl;
     }
-    rep(i, n)
+    else
     {
-        cout << out[i] << endl;
+        cout << "NO" << endl;
     }
     return 0;
 }

@@ -37,17 +37,6 @@ signed main(void)
 {
     int n;
     cin >> n;
-    char out[50][50];
-    rep(i, n)
-    {
-        rep(j, n)
-        {
-            cin >> out[j][(n - 1) - i];
-        }
-    }
-    rep(i, n)
-    {
-        cout << out[i] << endl;
-    }
+    cout << sqrt(sqrt(n)) << endl;
     return 0;
 }
