@@ -59,39 +59,35 @@ const int inf = 1e9 + 7;
 /* main */
 signed main(void)
 {
-    int n, m;
-    cin >> n >> m;
-    vector<string> vn(n);
-    vector<string> vm(m);
-    rep(i, n)
+    string o;
+    string e;
+    cin >> o >> e;
+    if (o.size() == e.size())
     {
-        cin >> vn[i];
-    }
-    rep(i, m)
-    {
-        cin >> vm[i];
-    }
-    bool flg = false;
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = i; j <= i + m; j++)
+        rep(i, o.size())
         {
-            if (vn[j].find(vm[j]) == string::npos)
-            {
-                flg = false;
-                continue;
-            }
-            else if (vn[j].find(vm[j]) != string::npos)
-            {
-                flg = true;
-            }
+            cout << o[i] << e[i];
         }
-        if (flg == true)
+        cout << endl;
+    }
+    else
+    {
+        if (o.size() > e.size())
         {
-            cout << "Yes" << endl;
-            return 0;
+            rep(i, e.size())
+            {
+                cout << o[i] << e[i];
+            }
+            cout << o[o.size() - 1] << endl;
+        }
+        else
+        {
+            rep(i, o.size())
+            {
+                cout << o[i] << e[i];
+            }
+            cout << e[e.size() - 1] << endl;
         }
     }
-    cout << "No" << endl;
     return 0;
 }

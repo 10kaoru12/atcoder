@@ -59,39 +59,8 @@ const int inf = 1e9 + 7;
 /* main */
 signed main(void)
 {
-    int n, m;
-    cin >> n >> m;
-    vector<string> vn(n);
-    vector<string> vm(m);
-    rep(i, n)
-    {
-        cin >> vn[i];
-    }
-    rep(i, m)
-    {
-        cin >> vm[i];
-    }
-    bool flg = false;
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = i; j <= i + m; j++)
-        {
-            if (vn[j].find(vm[j]) == string::npos)
-            {
-                flg = false;
-                continue;
-            }
-            else if (vn[j].find(vm[j]) != string::npos)
-            {
-                flg = true;
-            }
-        }
-        if (flg == true)
-        {
-            cout << "Yes" << endl;
-            return 0;
-        }
-    }
-    cout << "No" << endl;
+    int w, a, b;
+    cin >> w >> a >> b;
+    cout << (min(a, b) + w < max(a, b) ? max(a, b) - (min(a, b) + w) : 0) << endl;
     return 0;
 }

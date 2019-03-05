@@ -61,37 +61,37 @@ signed main(void)
 {
     int n, m;
     cin >> n >> m;
-    vector<string> vn(n);
-    vector<string> vm(m);
+    int nx[n], ny[n];
+    int mx[m], my[m];
     rep(i, n)
     {
-        cin >> vn[i];
+        cin >> nx[i] >> ny[i];
     }
     rep(i, m)
     {
-        cin >> vm[i];
+        cin >> mx[i] >> my[i];
     }
-    bool flg = false;
-    for (int i = 0; i < n; i++)
+    int mini;
+    int ans;
+    rep(i, n)
     {
-        for (int j = i; j <= i + m; j++)
+        ans = inf;
+        rep(j, m)
         {
-            if (vn[j].find(vm[j]) == string::npos)
+            mini = abs(nx[i] - mx[j]) + abs(ny[i] - my[j]);
+            if (ans > mini)
             {
-                flg = false;
-                continue;
-            }
-            else if (vn[j].find(vm[j]) != string::npos)
-            {
-                flg = true;
+                ans = mini;
             }
         }
-        if (flg == true)
+        rep(j, m)
         {
-            cout << "Yes" << endl;
-            return 0;
+            if (abs(nx[i] - mx[j]) + abs(ny[i] - my[j]) == ans)
+            {
+                cout << j + 1 << endl;
+                break;
+            }
         }
     }
-    cout << "No" << endl;
     return 0;
 }
