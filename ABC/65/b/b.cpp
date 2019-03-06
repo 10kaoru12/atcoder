@@ -46,7 +46,9 @@ bool chmin(T &a, const T &b)
 #define each(i, n) for (auto &i : n)
 #define all(x) (x).begin(), (x).end()
 #define rall(x) (x).rbegin(), (x).rend()
-#define eunique(x) (x).erase(unique(all(x)), (x).end())
+#define eunique(x) \
+    sort(all(x));  \
+    (x).erase(unique(all(x)), (x).end())
 #define int long long
 
 /* function */
@@ -59,23 +61,26 @@ const int inf = 1e9 + 7;
 /* main */
 signed main(void)
 {
-    int h, w;
-    cin >> h >> w;
-    rep(i, w + 2)
+    int n;
+    cin >> n;
+    vector<int> v(n);
+    rep(i, n)
     {
-        cout << "#";
+        cin >> v[i];
     }
-    cout << endl;
-    string s;
-    rep(i, h)
+    int tmp;
+    int cnt = 0;
+    bool flag = false;
+    rep(i, n)
     {
-        cin >> s;
-        cout << "#" + s + "#" << endl;
+        if (tmp == 1)
+        {
+            flag = true;
+            break;
+        }
+        tmp = v[i] - 1;
+        cnt++;
     }
-    rep(i, w + 2)
-    {
-        cout << "#";
-    }
-    cout << endl;
+    cout << (flag == true ? cnt : -1) << endl;
     return 0;
 }

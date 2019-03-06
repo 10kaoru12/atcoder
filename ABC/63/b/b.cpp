@@ -46,7 +46,9 @@ bool chmin(T &a, const T &b)
 #define each(i, n) for (auto &i : n)
 #define all(x) (x).begin(), (x).end()
 #define rall(x) (x).rbegin(), (x).rend()
-#define eunique(x) (x).erase(unique(all(x)), (x).end())
+#define eunique(x) \
+    sort(all(x));  \
+    (x).erase(unique(all(x)), (x).end())
 #define int long long
 
 /* function */
@@ -59,23 +61,22 @@ const int inf = 1e9 + 7;
 /* main */
 signed main(void)
 {
-    int h, w;
-    cin >> h >> w;
-    rep(i, w + 2)
-    {
-        cout << "#";
-    }
-    cout << endl;
+    // string s;
+    // cin >> s;
+    // int fsize = s.size();
+    // set<char> st;
+    // rep(i, s.size())
+    // {
+    //     st.insert(s[i]);
+    // }
+    // int esize = st.size();
+    // cout << (fsize == esize ? "yes" : "no") << endl;
+    // return 0;
     string s;
-    rep(i, h)
-    {
-        cin >> s;
-        cout << "#" + s + "#" << endl;
-    }
-    rep(i, w + 2)
-    {
-        cout << "#";
-    }
-    cout << endl;
+    cin >> s;
+    int fsize = s.size();
+    eunique(s);
+    int esize = s.size();
+    cout << (fsize == esize ? "yes" : "no") << endl;
     return 0;
 }
