@@ -61,32 +61,12 @@ const int inf = 1e9 + 7;
 /* main */
 signed main(void)
 {
-    int n;
+    int n, m;
     cin >> n;
-    vector<int> b;
-    int a;
-    for (int i = 0; i < n; i++)
+    for (int i = 1; i <= n; i <<= 1)
     {
-        cin >> a;
-        b.emplace_back(a);
+        m = i;
     }
-    int pos = 0, ans = 0;
-    for (int i = 0; i <= n * 2; i++)
-    {
-        ans++;
-        if (b[pos] == 2)
-        {
-            break;
-        }
-        pos = b[pos] - 1;
-    }
-    if (ans >= n * 2)
-    {
-        cout << -1 << endl;
-    }
-    else
-    {
-        cout << ans << endl;
-    }
+    cout << m << endl;
     return 0;
 }
