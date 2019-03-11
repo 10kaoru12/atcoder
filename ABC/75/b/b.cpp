@@ -50,6 +50,7 @@ bool chmin(T &a, const T &b)
     sort(all(x));  \
     (x).erase(unique(all(x)), (x).end())
 #define int long long
+#define mp make_pair
 
 /* function */
 int gcd(int a, int b) { return b ? gcd(b, a % b) : a; }
@@ -61,14 +62,46 @@ const int inf = 1e9 + 7;
 /* main */
 signed main(void)
 {
-    int n, k, sum = 0;
-    cin >> n >> k;
-    rep(i, n)
+    const int dx[8] = {1, 0, -1, 0, 1, -1, -1, 1};
+    const int dy[8] = {0, 1, 0, -1, 1, 1, -1, -1};
+    int w, h, nx, ny, cnt;
+    cin >> h >> w;
+    array<string, 100> v;
+    rep(i, h)
     {
-        int x;
-        cin >> x;
-        sum += min(0 + x, abs(k - x)) * 2;
+        cin >> v[i];
     }
-    cout << sum << endl;
+    rep(i, h)
+    {
+        rep(j, w)
+        {
+            if (v[i][j] == '#')
+            {
+                continue;
+            }
+            cnt = 0;
+            rep(k, 8)
+            {
+                nx = i + dx[k];
+                ny = j + dy[k];
+                try
+                {
+                    if (v.at(nx).at(ny) == '#')
+                    {
+                        cnt++;
+                    }
+                }
+                catch (out_of_range &e)
+                {
+                    continue;
+                }
+            }
+            v[i][j] = cnt + '0';
+        }
+    }
+    rep(i, h)
+    {
+        cout << v[i] << endl;
+    }
     return 0;
 }

@@ -61,14 +61,30 @@ const int inf = 1e9 + 7;
 /* main */
 signed main(void)
 {
-    int n, k, sum = 0;
-    cin >> n >> k;
+    int n, m, c;
+    cin >> n >> m >> c;
+    int cnt = 0;
+    vector<int> b(m);
+    rep(i, m)
+    {
+        cin >> b[i];
+    }
+    int tmp;
+    int a[n][m];
     rep(i, n)
     {
-        int x;
-        cin >> x;
-        sum += min(0 + x, abs(k - x)) * 2;
+        tmp = 0;
+        rep(j, m)
+        {
+            cin >> a[i][j];
+            tmp += a[i][j] * b[j];
+        }
+        tmp += c;
+        if (tmp > 0)
+        {
+            cnt++;
+        }
     }
-    cout << sum << endl;
+    cout << cnt << endl;
     return 0;
 }

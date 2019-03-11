@@ -61,5 +61,8 @@ const int inf = 1e9 + 7;
 /* main */
 signed main(void)
 {
-    
+    int h, w, hh, ww;
+    cin >> h >> w >> hh >> ww;
+    cout << (h - hh) * (w - ww) << endl;
+    return 0;
 }
