@@ -44,7 +44,8 @@
     "C_Cpp.default.compilerPath": "/usr/local/Cellar/gcc/8.2.0/bin/g++-8",
     "C_Cpp.default.cppStandard": "c++14",
     "C_Cpp.default.intelliSenseMode": "gcc-x64",
-    "C_Cpp.errorSquiggles": "Disabled",
+    "C_Cpp.errorSquiggles": "Enabled",
+    "C_Cpp.autocomplete": "Default",
 
     //code-runner
     "code-runner.saveAllFilesBeforeRun": true,
@@ -52,8 +53,8 @@
         "javascript": "node",
         "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
         "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-        "cpp": "cd $dir && g++ -O3 -std=c++14 -I/usr/local/Cellar/boost/1.68.0_1/include $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-        "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "cpp": "cd $dir && g++ -O3 -mtune=native -march=native -std=c++14 -I/usr/local/Cellar/boost/1.68.0_1/include $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNasmeWithoutExt && $dir$fileNameWithoutExt",
         "php": "php",
         "python": "python -u",
         "perl": "perl",
