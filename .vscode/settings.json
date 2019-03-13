@@ -9,7 +9,8 @@
         "iomanip": "cpp",
         "queue": "cpp",
         "stack": "cpp",
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "*.tcc": "cpp"
     },
 
     // editor

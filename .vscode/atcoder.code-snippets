@@ -40,6 +40,7 @@
 			"    (x).erase(unique(all(x)), (x).end())",
 			"#define int long long",
 			"#define mp make_pair",
+			"#define r0 return 0",
 			"",
 			"/* function */",
 			"int gcd(int a, int b) { return b ? gcd(b, a % b) : a; }",
