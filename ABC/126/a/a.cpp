@@ -55,7 +55,7 @@ signed main(void)
     cin >> n >> k;
     string s;
     cin >> s;
-    s[k-1] += 0x20;
+    s[k - 1] = tolower(s[k - 1]);
     cout << s << endl;
     return 0;
 }
