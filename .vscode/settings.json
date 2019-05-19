@@ -2,19 +2,10 @@
     //files
     "files.autoSave": "afterDelay",
     "files.autoGuessEncoding": true,
-    "files.associations": {
-        "ostream": "cpp",
-        "iostream": "cpp",
-        "chrono": "cpp",
-        "iomanip": "cpp",
-        "queue": "cpp",
-        "stack": "cpp",
-        "cmath": "cpp",
-        "*.tcc": "cpp"
-    },
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
 
-    // editor
-    "editor.fontSize": 14,
+    //editor
     "editor.lineNumbers": "on",
     "editor.renderWhitespace": "boundary",
     "editor.cursorBlinking": "smooth",
@@ -24,29 +15,42 @@
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
     "editor.cursorSmoothCaretAnimation": true,
+    "editor.defaultFormatter": "vscode.configuration-editing",
+    "editor.tabCompletion": "on",
+
+    //workbench
+    "workbench.commandPalette.preserveInput": true,
+    "workbench.list.horizontalScrolling": true,
+    "workbench.editor.swipeToNavigate": true,
+
+    //search
+    "search.maintainFileSearchCache": true,
+    "search.smartCase": true,
+    "search.showLineNumbers": true,
 
     //breadcrumbs
     "breadcrumbs.enabled": true,
 
+    //terminal
+    "terminal.integrated.shell.osx": "/usr/local/bin/fish",
+
     //git
-    "git.autofetch": true,
     "git.enableSmartCommit": true,
-    "git.confirmSync": true,
-    "git.ignoreLegacyWarning": true,
     "git.showPushSuccessNotification": true,
+    "git.autofetch": true,
 
-    //workbench
-    "workbench.colorTheme": "Visual Studio Light",
-    "workbench.iconTheme": "vs-minimal",
-    "workbench.editor.swipeToNavigate": true,
-
-    //C_Cpp
+    //c_cpp
     "C_Cpp.clang_format_sortIncludes": true,
-    "C_Cpp.default.compilerPath": "/usr/local/Cellar/gcc/8.2.0/bin/g++-8",
+    "C_Cpp.autocomplete": "Default",
+    "C_Cpp.default.cStandard": "c11",
     "C_Cpp.default.cppStandard": "c++14",
     "C_Cpp.default.intelliSenseMode": "gcc-x64",
-    "C_Cpp.errorSquiggles": "Enabled",
-    "C_Cpp.autocomplete": "Default",
+
+    //html
+    "html.format.indentInnerHtml": true,
+    "html-css-class-completion.enableEmmetSupport": true,
+    "html.format.endWithNewline": true,
+    "html.format.extraLiners": "head, body, /html",
 
     //code-runner
     "code-runner.saveAllFilesBeforeRun": true,
@@ -54,10 +58,10 @@
         "javascript": "node",
         "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
         "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-        "cpp": "cd $dir && g++ -O3 -mtune=native -march=native -std=c++14 -I/usr/local/Cellar/boost/1.68.0_1/include $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-        "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNasmeWithoutExt && $dir$fileNameWithoutExt",
+        "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt -O3 -mtune=native -march=native -std=c++14",
+        "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
         "php": "php",
-        "python": "python -u",
+        "python": "python3 -u",
         "perl": "perl",
         "perl6": "perl6",
         "ruby": "ruby",
@@ -89,6 +93,8 @@
         "pascal": "cd $dir && fpc $fileName && $dir$fileNameWithoutExt",
         "d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
         "haskell": "runhaskell",
-        "nim": "nim compile --verbosity:0 --hints:off --run"
+        "nim": "nim compile --verbosity:0 --hints:off --run",
+        "lisp": "sbcl --script",
+        "kit": "kitc --run"
     }
 }
