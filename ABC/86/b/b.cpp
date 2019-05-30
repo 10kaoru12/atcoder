@@ -11,7 +11,7 @@ struct Fast
     {
         std::cin.tie(0);
         ios::sync_with_stdio(0);
-        cout << fixed << setprecision(12);
+        //cout << fixed << setprecision(12);
     }
 } fast;
 
@@ -35,6 +35,7 @@ bool chmin(T &a, const T &b) { return (b < a) ? (a = b, 1) : 0; }
     (x).erase(unique(all(x)), (x).end())
 #define int long long
 #define mp make_pair
+#define r0 return 0
 
 /* function */
 int gcd(int a, int b) { return b ? gcd(b, a % b) : a; }
@@ -50,9 +51,18 @@ const int dys[4] = {0, 1, 0, -1};
 /* main */
 signed main(void)
 {
-    string a, b, c;
+    string a;
+    string b;
     cin >> a >> b;
-    c = a + b;
-    cout << ((sqrt((double)stoi(c)) == (int)sqrt((double)stoi(c))) ? "Yes" : "No") << endl;
+    a += b;
+    int n= stoi(a);
+    int num = sqrt(n);
+    if (n == pow(num, 2))
+    {
+        cout << "Yes" << endl;
+    }
+    else{
+        cout << "No" << endl;
+    }
     return 0;
 }

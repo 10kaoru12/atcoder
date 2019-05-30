@@ -96,5 +96,9 @@
         "nim": "nim compile --verbosity:0 --hints:off --run",
         "lisp": "sbcl --script",
         "kit": "kitc --run"
+    },
+    "files.associations": {
+        "ostream": "cpp",
+        "iomanip": "cpp"
     }
 }
