@@ -1,12 +1,8 @@
 /* include */
 #include <bits/stdc++.h>
-#include <boost/integer/common_factor.hpp>
-#include <boost/integer/common_factor_ct.hpp>
-#include <boost/integer/common_factor_rt.hpp>
 
 /* using */
 using namespace std;
-using namespace boost;
 
 /* main constructor */
 struct Fast
@@ -42,6 +38,8 @@ bool chmin(T &a, const T &b) { return (b < a) ? (a = b, 1) : 0; }
 #define r0 return 0
 
 /* function */
+int gcd(int a, int b) { return b ? gcd(b, a % b) : a; }
+int lcm(int a, int b) { return a * b / gcd(a, b); }
 
 /* const */
 const int inf = 1e9 + 7;
@@ -53,7 +51,12 @@ const int dys[4] = {0, 1, 0, -1};
 /* main */
 signed main(void)
 {
-    cout << "GCD(4, 10) = " << integer::gcd(4, 10) << endl;
-    cout << "LCM(4, 10) = " << integer::lcm(4, 10) << endl;
+    vector<int> a(3);
+    rep(i, 3)
+    {
+        cin>>a[i];
+    }
+    sort(all(a));
+    cout << a[0] + a[1] << endl;
     return 0;
 }

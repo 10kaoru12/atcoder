@@ -1,12 +1,8 @@
 /* include */
 #include <bits/stdc++.h>
-#include <boost/integer/common_factor.hpp>
-#include <boost/integer/common_factor_ct.hpp>
-#include <boost/integer/common_factor_rt.hpp>
 
 /* using */
 using namespace std;
-using namespace boost;
 
 /* main constructor */
 struct Fast
@@ -42,6 +38,8 @@ bool chmin(T &a, const T &b) { return (b < a) ? (a = b, 1) : 0; }
 #define r0 return 0
 
 /* function */
+int gcd(int a, int b) { return b ? gcd(b, a % b) : a; }
+int lcm(int a, int b) { return a * b / gcd(a, b); }
 
 /* const */
 const int inf = 1e9 + 7;
@@ -53,7 +51,29 @@ const int dys[4] = {0, 1, 0, -1};
 /* main */
 signed main(void)
 {
-    cout << "GCD(4, 10) = " << integer::gcd(4, 10) << endl;
-    cout << "LCM(4, 10) = " << integer::lcm(4, 10) << endl;
+    int n;
+    vector<int> v(n);
+    cin >> n;
+    rep(i, n)
+    {
+        cin >> v[i];
+    }
+    int sum1, sum2;
+    int ans = inf;
+    for (int i = 1; i <= n-1;i++){
+        sum1 = 0;
+        sum2 = 0;
+        for (int j = 0; j < i; j++)
+        {
+            sum1 += v[j];
+        }
+        for (int k = n - 1; k >= i;k--){
+            sum2 += v[k];
+        }
+        if(ans>max(sum1,sum2)-min(sum1,sum2)){
+            ans = max(sum1, sum2) - min(sum1, sum2);
+        }
+    }
+    cout << ans << endl;
     return 0;
 }

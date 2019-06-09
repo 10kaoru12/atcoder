@@ -11,12 +11,12 @@
     "editor.cursorBlinking": "smooth",
     "editor.smoothScrolling": true,
     "editor.autoIndent": true,
-    "editor.formatOnType": true,
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true,
     "editor.cursorSmoothCaretAnimation": true,
     "editor.defaultFormatter": "vscode.configuration-editing",
     "editor.tabCompletion": "on",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
 
     //workbench
     "workbench.commandPalette.preserveInput": true,
@@ -45,6 +45,8 @@
     "C_Cpp.default.cStandard": "c11",
     "C_Cpp.default.cppStandard": "c++14",
     "C_Cpp.default.intelliSenseMode": "gcc-x64",
+    "C_Cpp.clang_format_style": "file",
+    "C_Cpp.clang_format_fallbackStyle": "Visual Studio",
 
     //html
     "html.format.indentInnerHtml": true,
@@ -53,12 +55,14 @@
     "html.format.extraLiners": "head, body, /html",
 
     //code-runner
-    "code-runner.saveAllFilesBeforeRun": true,
+    "code-runner.saveFileBeforeRun": true,
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.runInTerminal": true,
     "code-runner.executorMap": {
         "javascript": "node",
         "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
         "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-        "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt -O3 -mtune=native -march=native -std=c++14",
+        "cpp": "cd $dir && g++ $fileName -I/usr/local/include -L/usr/local/lib -o $fileNameWithoutExt && $dir$fileNameWithoutExt -O3 -mtune=native -march=native -std=c++14",
         "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
         "php": "php",
         "python": "python3 -u",
@@ -99,6 +103,8 @@
     },
     "files.associations": {
         "ostream": "cpp",
-        "iomanip": "cpp"
-    }
+        "iomanip": "cpp",
+        "iostream": "cpp"
+    },
+    "python.pythonPath": "/usr/local/opt/python/bin/python3.7"
 }
