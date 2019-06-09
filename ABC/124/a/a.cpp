@@ -17,25 +17,9 @@ struct Fast
 
 /* template */
 template <class T>
-bool chmax(T &a, const T &b)
-{
-    if (a < b)
-    {
-        a = b;
-        return 1;
-    }
-    return 0;
-}
+bool chmax(T &a, const T &b) { return (a < b) ? (a = b, 1) : 0; }
 template <class T>
-bool chmin(T &a, const T &b)
-{
-    if (b < a)
-    {
-        a = b;
-        return 1;
-    }
-    return 0;
-}
+bool chmin(T &a, const T &b) { return (b < a) ? (a = b, 1) : 0; }
 
 /* define */
 #define REP(i, x, n) for (int i = x; i < (int)(n); ++i)
@@ -50,6 +34,8 @@ bool chmin(T &a, const T &b)
     sort(all(x));  \
     (x).erase(unique(all(x)), (x).end())
 #define int long long
+#define mp make_pair
+#define r0 return 0
 
 /* function */
 int gcd(int a, int b) { return b ? gcd(b, a % b) : a; }
@@ -57,12 +43,29 @@ int lcm(int a, int b) { return a * b / gcd(a, b); }
 
 /* const */
 const int inf = 1e9 + 7;
+const int dxl[8] = {1, 0, -1, 0, 1, -1, -1, 1};
+const int dyl[8] = {0, 1, 0, -1, 1, 1, -1, -1};
+const int dxs[4] = {1, 0, -1, 0};
+const int dys[4] = {0, 1, 0, -1};
 
 /* main */
 signed main(void)
 {
-    int h, w, hh, ww;
-    cin >> h >> w >> hh >> ww;
-    cout << (h - hh) * (w - ww) << endl;
+    int a, b, sum = 0;
+    cin >> a >> b;
+    rep(i, 2)
+    {
+        if (a > b)
+        {
+            sum += a;
+            a--;
+        }
+        else
+        {
+            sum += b;
+            b--;
+        }
+    }
+    cout << sum << endl;
     return 0;
 }
