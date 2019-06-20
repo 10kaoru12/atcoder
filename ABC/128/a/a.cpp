@@ -46,8 +46,8 @@ const int dys[4] = {0, 1, 0, -1};
 /* main */
 signed main(void)
 {
-    int a, b, t;
-    cin >> a >> b >> t;
-    cout << t / a * b << endl;
+    int a, p;
+    cin >> a >> p;
+    cout << ((a * 3) + p) / 2 << endl;
     return 0;
 }

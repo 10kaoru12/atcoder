@@ -104,7 +104,8 @@
     "files.associations": {
         "ostream": "cpp",
         "iomanip": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "cmath": "cpp"
     },
     "python.pythonPath": "/usr/local/opt/python/bin/python3.7"
 }

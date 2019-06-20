@@ -46,8 +46,25 @@ const int dys[4] = {0, 1, 0, -1};
 /* main */
 signed main(void)
 {
-    int a, b, t;
-    cin >> a >> b >> t;
-    cout << t / a * b << endl;
+    int x;
+    int num;
+    int max = 0;
+    cin >> x;
+    for (int i = 1; i <= x; i++)
+    {
+        for (int j = 2; j - 1 <= x; j++)
+        {
+            num = pow(i, j);
+            if (num > x)
+            {
+                break;
+            }
+            if (num > max)
+            {
+                max = num;
+            }
+        }
+    }
+    cout << max << endl;
     return 0;
 }

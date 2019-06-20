@@ -46,8 +46,14 @@ const int dys[4] = {0, 1, 0, -1};
 /* main */
 signed main(void)
 {
-    int a, b, t;
-    cin >> a >> b >> t;
-    cout << t / a * b << endl;
+    int a, b, c, k;
+    cin >> a >> b >> c >> k;
+    int maxi = max({a, b, c});
+    int sum = (a + b + c) - maxi;
+    rep(i, k)
+    {
+        maxi *= 2;
+    }
+    cout << sum + maxi << endl;
     return 0;
 }
