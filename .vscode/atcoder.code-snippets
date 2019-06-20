@@ -5,6 +5,9 @@
 		"body": [
 			"/* include */",
 			"#include <bits/stdc++.h>",
+			"#include <boost/range/algorithm.hpp>",
+			"#include <boost/algorithm/string/trim.hpp>",
+
 			"",
 			"/* using */",
 			"using namespace std;",
@@ -36,10 +39,9 @@
 			"#define all(x) (x).begin(), (x).end()",
 			"#define rall(x) (x).rbegin(), (x).rend()",
 			"#define eunique(x) \\",
-			"    sort(all(x));  \\",
+			"    boost::sort(x);  \\",
 			"    (x).erase(unique(all(x)), (x).end())",
 			"#define mp make_pair",
-			"#define r0 return 0",
 			"",
 			"/* const */",
 			"const int inf = 1e9 + 7;",
