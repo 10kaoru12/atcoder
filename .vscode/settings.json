@@ -50,7 +50,6 @@
 
     //html
     "html.format.indentInnerHtml": true,
-    "html-css-class-completion.enableEmmetSupport": true,
     "html.format.endWithNewline": true,
     "html.format.extraLiners": "head, body, /html",
 
@@ -107,5 +106,5 @@
         "iostream": "cpp",
         "cmath": "cpp"
     },
-    "python.pythonPath": "/usr/local/opt/python/bin/python3.7"
+    "python.pythonPath": "/usr/local/opt/python/bin/python3.7",
 }
