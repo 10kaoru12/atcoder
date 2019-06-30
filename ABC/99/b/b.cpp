@@ -1,10 +1,16 @@
 /* include */
 #include <bits/stdc++.h>
-#include <boost/range/algorithm.hpp>
 #include <boost/algorithm/string/trim.hpp>
+#include <boost/foreach.hpp>
+#include <boost/format.hpp>
+#include <boost/integer/common_factor.hpp>
+#include <boost/multiprecision/cpp_int.hpp>
+#include <boost/range/algorithm.hpp>
+#include <boost/range/numeric.hpp>
 
 /* using */
 using namespace std;
+namespace mp = boost::multiprecision;
 
 /* main constructor */
 struct Fast
@@ -32,8 +38,8 @@ bool chmin(T &a, const T &b) { return (b < a) ? (a = b, 1) : 0; }
 #define each(i, n) for (auto &i : n)
 #define all(x) (x).begin(), (x).end()
 #define rall(x) (x).rbegin(), (x).rend()
-#define eunique(x) \
-    boost::sort(x);  \
+#define eunique(x)  \
+    boost::sort(x); \
     (x).erase(unique(all(x)), (x).end())
 #define mp make_pair
 
@@ -47,5 +53,9 @@ const int dys[4] = {0, 1, 0, -1};
 /* main */
 signed main(void)
 {
-    
+    int a, b;
+    cin >> a >> b;
+    int sum = ((b - a) * (b - a + 1)) / 2;
+    cout << sum - b << endl;
+    return 0;
 }
