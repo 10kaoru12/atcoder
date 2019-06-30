@@ -2,10 +2,11 @@
 #include <bits/stdc++.h>
 #include <boost/algorithm/string/trim.hpp>
 #include <boost/foreach.hpp>
-#include <boost/graph/adjacency_list.hpp>
-#include <boost/graph/dijkstra_shortest_paths.hpp>
+#include <boost/format.hpp>
+#include <boost/math/common_factor_rt.hpp>
 #include <boost/multiprecision/cpp_int.hpp>
 #include <boost/range/algorithm.hpp>
+#include <boost/range/numeric.hpp>
 
 /* using */
 using namespace std;
@@ -34,7 +35,7 @@ bool chmin(T &a, const T &b) { return (b < a) ? (a = b, 1) : 0; }
 #define rep(i, n) REP(i, 0, n)
 #define reps(i, n) REP(i, 1, n + 1)
 #define rrep(i, n) RREP(i, n, 0)
-#define each(i, n) for (auto &i : n)
+#define each(i, n) BOOST_FOREACH(auto &i : n)
 #define all(x) (x).begin(), (x).end()
 #define rall(x) (x).rbegin(), (x).rend()
 #define eunique(x)  \
@@ -52,6 +53,8 @@ const int dys[4] = {0, 1, 0, -1};
 /* main */
 signed main(void)
 {
+    auto x = 1;
+    cout << x << endl;
     vector<int> v = {1, 5, 3, 5, 6, 7, 5, 3, 3, 5};
     boost::sort(v);
     BOOST_FOREACH (int i, v)

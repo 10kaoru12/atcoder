@@ -1,12 +1,16 @@
 /* include */
 #include <bits/stdc++.h>
-#include <boost/integer/common_factor.hpp>
-#include <boost/integer/common_factor_ct.hpp>
-#include <boost/integer/common_factor_rt.hpp>
+#include <boost/algorithm/string/trim.hpp>
+#include <boost/foreach.hpp>
+#include <boost/format.hpp>
+#include <boost/math/common_factor_rt.hpp>
+#include <boost/multiprecision/cpp_int.hpp>
+#include <boost/range/algorithm.hpp>
+#include <boost/range/numeric.hpp>
 
 /* using */
 using namespace std;
-using namespace boost;
+namespace mp = boost::multiprecision;
 
 /* main constructor */
 struct Fast
@@ -17,7 +21,7 @@ struct Fast
         ios::sync_with_stdio(0);
         //cout << fixed << setprecision(12);
     }
-} fast;
+};
 
 /* template */
 template <class T>
@@ -31,17 +35,13 @@ bool chmin(T &a, const T &b) { return (b < a) ? (a = b, 1) : 0; }
 #define rep(i, n) REP(i, 0, n)
 #define reps(i, n) REP(i, 1, n + 1)
 #define rrep(i, n) RREP(i, n, 0)
-#define each(i, n) for (auto &i : n)
+#define each(i, n) BOOST_FOREACH(auto &i : n)
 #define all(x) (x).begin(), (x).end()
 #define rall(x) (x).rbegin(), (x).rend()
-#define eunique(x) \
-    sort(all(x));  \
+#define eunique(x)  \
+    boost::sort(x); \
     (x).erase(unique(all(x)), (x).end())
-#define int long long
 #define mp make_pair
-#define r0 return 0
-
-/* function */
 
 /* const */
 const int inf = 1e9 + 7;
@@ -53,7 +53,4 @@ const int dys[4] = {0, 1, 0, -1};
 /* main */
 signed main(void)
 {
-    cout << "GCD(4, 10) = " << integer::gcd(4, 10) << endl;
-    cout << "LCM(4, 10) = " << integer::lcm(4, 10) << endl;
-    return 0;
 }
